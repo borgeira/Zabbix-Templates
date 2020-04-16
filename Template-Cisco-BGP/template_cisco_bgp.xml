@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>4.0</version>
-    <date>2020-04-16T01:51:15Z</date>
+    <date>2020-04-16T01:55:40Z</date>
     <groups>
         <group>
-            <name>G8 - TEMPLATES DE FUNCAO</name>
+            <name>Templates</name>
         </group>
     </groups>
     <templates>
@@ -14,7 +14,7 @@
             <description/>
             <groups>
                 <group>
-                    <name>G8 - TEMPLATES DE FUNCAO</name>
+                    <name>Templates</name>
                 </group>
             </groups>
             <applications>
