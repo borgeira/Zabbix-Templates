@@ -1,6 +1,6 @@
 # Zabbix-Templates
 
-Zabbix templates that I created to help monitoring some backbone network resources.
+Zabbix templates created to help monitoring some backbone network resources.
 
 ### Template Cisco BGP
 
