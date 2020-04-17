@@ -6,14 +6,15 @@ Zabbix templates created to monitor some backbone network resources.
 
  - Auto-discovering
  - Supports IPv6 BGP sessions
- - Monitoring of 32-bit ASN supported
- - Different message/severity based on the ASN
+ - Trigger for 80% prefix limit reached
+ - Monitoring of 32-bit ASNs supported
+ - Different message/severity based on ASN
  - Trigger disabled when BGP in admin shutdown mode
 
-*This template uses the MIB cbgpPeer2Table, allowing identifying the ASN even when 32-bits. It also allows monitoring IPv6 sessions. The disadvantage of this MIB is that the cbgpPeer2RemoteAddr is an "not-accessible" object, this way, I had to obtain the IP addresses directly from the MIB index structure. Its strange, but it works perfectly.*
+*This template uses the MIB cbgpPeer2Table, allowing identifying the ASN even when 32-bits. It also allows monitoring IPv6 sessions. The disadvantage of this MIB is that the cbgpPeer2RemoteAddr is an "not-accessible" object, this way, I had to obtain the IP addresses directly from the MIB index structure.*
 
 #### Zabbix Macros:
- - {$BGP_PEER_AS} - critical ASNs (format 00000|111111|22222)
+ - {$BGP_CRITICAL_ASN} - critical ASNs - format ^(00000|11111|22222|33333)$
  - {$SNMP_COMMUNITY} - the router SNMP community
 
 ## Template Cisco OSPF
