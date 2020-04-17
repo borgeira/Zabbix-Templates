@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>4.0</version>
-    <date>2020-04-16T01:55:40Z</date>
+    <date>2020-04-17T16:24:32Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -54,7 +54,7 @@
                         <conditions>
                             <condition>
                                 <macro>{#SNMPVALUE}</macro>
-                                <value>{$BGP_PEER_AS}</value>
+                                <value>{$BGP_CRITICAL_ASN}</value>
                                 <operator>8</operator>
                                 <formulaid>A</formulaid>
                             </condition>
@@ -64,6 +64,66 @@
                     <description/>
                     <item_prototypes>
                         <item_prototype>
+                            <name>Neighbor {#SNMPINDEX} accepted prefixes</name>
+                            <type>4</type>
+                            <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                            <snmp_oid>.1.3.6.1.4.1.9.9.187.1.2.8.1.1.1.4.{#SNMPINDEX}.1.1</snmp_oid>
+                            <key>cisco.bgp.critical.ipv4.accepted[{#SNMPINDEX}]</key>
+                            <delay>15m</delay>
+                            <history>7d</history>
+                            <trends>0</trends>
+                            <status>0</status>
+                            <value_type>3</value_type>
+                            <allowed_hosts/>
+                            <units/>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description/>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>BGP</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                            <logtimefmt/>
+                            <preprocessing/>
+                            <jmx_endpoint/>
+                            <timeout>3s</timeout>
+                            <url/>
+                            <query_fields/>
+                            <posts/>
+                            <status_codes>200</status_codes>
+                            <follow_redirects>1</follow_redirects>
+                            <post_type>0</post_type>
+                            <http_proxy/>
+                            <headers/>
+                            <retrieve_mode>0</retrieve_mode>
+                            <request_method>0</request_method>
+                            <output_format>0</output_format>
+                            <allow_traps>0</allow_traps>
+                            <ssl_cert_file/>
+                            <ssl_key_file/>
+                            <ssl_key_password/>
+                            <verify_peer>0</verify_peer>
+                            <verify_host>0</verify_host>
+                            <application_prototypes/>
+                            <master_item/>
+                        </item_prototype>
+                        <item_prototype>
                             <name>Neighbor {#SNMPINDEX} admin state</name>
                             <type>4</type>
                             <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
@@ -71,7 +131,7 @@
                             <key>cisco.bgp.critical.ipv4.admin[{#SNMPINDEX}]</key>
                             <delay>2m</delay>
                             <history>1d</history>
-                            <trends>1d</trends>
+                            <trends>0</trends>
                             <status>0</status>
                             <value_type>3</value_type>
                             <allowed_hosts/>
@@ -124,6 +184,66 @@
                             <master_item/>
                         </item_prototype>
                         <item_prototype>
+                            <name>Neighbor {#SNMPINDEX} prefix limit</name>
+                            <type>4</type>
+                            <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                            <snmp_oid>.1.3.6.1.4.1.9.9.187.1.2.8.1.3.1.4.{#SNMPINDEX}.1.1</snmp_oid>
+                            <key>cisco.bgp.critical.ipv4.limit[{#SNMPINDEX}]</key>
+                            <delay>1h</delay>
+                            <history>7d</history>
+                            <trends>0</trends>
+                            <status>0</status>
+                            <value_type>3</value_type>
+                            <allowed_hosts/>
+                            <units/>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description/>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>BGP</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                            <logtimefmt/>
+                            <preprocessing/>
+                            <jmx_endpoint/>
+                            <timeout>3s</timeout>
+                            <url/>
+                            <query_fields/>
+                            <posts/>
+                            <status_codes>200</status_codes>
+                            <follow_redirects>1</follow_redirects>
+                            <post_type>0</post_type>
+                            <http_proxy/>
+                            <headers/>
+                            <retrieve_mode>0</retrieve_mode>
+                            <request_method>0</request_method>
+                            <output_format>0</output_format>
+                            <allow_traps>0</allow_traps>
+                            <ssl_cert_file/>
+                            <ssl_key_file/>
+                            <ssl_key_password/>
+                            <verify_peer>0</verify_peer>
+                            <verify_host>0</verify_host>
+                            <application_prototypes/>
+                            <master_item/>
+                        </item_prototype>
+                        <item_prototype>
                             <name>Neighbor {#SNMPINDEX} state</name>
                             <type>4</type>
                             <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
@@ -131,7 +251,7 @@
                             <key>cisco.bgp.critical.ipv4.state[{#SNMPINDEX}]</key>
                             <delay>2m</delay>
                             <history>1d</history>
-                            <trends>1d</trends>
+                            <trends>0</trends>
                             <status>0</status>
                             <value_type>3</value_type>
                             <allowed_hosts/>
@@ -201,6 +321,22 @@
                             <dependencies/>
                             <tags/>
                         </trigger_prototype>
+                        <trigger_prototype>
+                            <expression>{CISCO - BGP:cisco.bgp.critical.ipv4.accepted[{#SNMPINDEX}].last()}&gt;(0.8*{CISCO - BGP:cisco.bgp.critical.ipv4.limit[{#SNMPINDEX}].last()})</expression>
+                            <recovery_mode>0</recovery_mode>
+                            <recovery_expression/>
+                            <name>Critical BGP with AS {#SNMPVALUE} IPv4 {#SNMPINDEX} reached 80% of prefix limit</name>
+                            <correlation_mode>0</correlation_mode>
+                            <correlation_tag/>
+                            <url/>
+                            <status>0</status>
+                            <priority>4</priority>
+                            <description/>
+                            <type>0</type>
+                            <manual_close>0</manual_close>
+                            <dependencies/>
+                            <tags/>
+                        </trigger_prototype>
                     </trigger_prototypes>
                     <graph_prototypes/>
                     <host_prototypes/>
@@ -253,7 +389,7 @@
                         <conditions>
                             <condition>
                                 <macro>{#SNMPVALUE}</macro>
-                                <value>{$BGP_PEER_AS}</value>
+                                <value>{$BGP_CRITICAL_ASN}</value>
                                 <operator>8</operator>
                                 <formulaid>A</formulaid>
                             </condition>
@@ -263,6 +399,66 @@
                     <description/>
                     <item_prototypes>
                         <item_prototype>
+                            <name>Neighbor {#SNMPINDEX} accepted prefixes</name>
+                            <type>4</type>
+                            <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                            <snmp_oid>.1.3.6.1.4.1.9.9.187.1.2.8.1.1.2.16.{#SNMPINDEX}.2.1</snmp_oid>
+                            <key>cisco.bgp.critical.ipv6.accepted[{#SNMPINDEX}]</key>
+                            <delay>15m</delay>
+                            <history>7d</history>
+                            <trends>0</trends>
+                            <status>0</status>
+                            <value_type>3</value_type>
+                            <allowed_hosts/>
+                            <units/>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description/>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>BGP</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                            <logtimefmt/>
+                            <preprocessing/>
+                            <jmx_endpoint/>
+                            <timeout>3s</timeout>
+                            <url/>
+                            <query_fields/>
+                            <posts/>
+                            <status_codes>200</status_codes>
+                            <follow_redirects>1</follow_redirects>
+                            <post_type>0</post_type>
+                            <http_proxy/>
+                            <headers/>
+                            <retrieve_mode>0</retrieve_mode>
+                            <request_method>0</request_method>
+                            <output_format>0</output_format>
+                            <allow_traps>0</allow_traps>
+                            <ssl_cert_file/>
+                            <ssl_key_file/>
+                            <ssl_key_password/>
+                            <verify_peer>0</verify_peer>
+                            <verify_host>0</verify_host>
+                            <application_prototypes/>
+                            <master_item/>
+                        </item_prototype>
+                        <item_prototype>
                             <name>Neighbor {#SNMPINDEX} admin state</name>
                             <type>4</type>
                             <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
@@ -270,7 +466,67 @@
                             <key>cisco.bgp.critical.ipv6.admin[{#SNMPINDEX}]</key>
                             <delay>2m</delay>
                             <history>1d</history>
-                            <trends>1d</trends>
+                            <trends>0</trends>
+                            <status>0</status>
+                            <value_type>3</value_type>
+                            <allowed_hosts/>
+                            <units/>
+                            <snmpv3_contextname/>
+                            <snmpv3_securityname/>
+                            <snmpv3_securitylevel>0</snmpv3_securitylevel>
+                            <snmpv3_authprotocol>0</snmpv3_authprotocol>
+                            <snmpv3_authpassphrase/>
+                            <snmpv3_privprotocol>0</snmpv3_privprotocol>
+                            <snmpv3_privpassphrase/>
+                            <params/>
+                            <ipmi_sensor/>
+                            <authtype>0</authtype>
+                            <username/>
+                            <password/>
+                            <publickey/>
+                            <privatekey/>
+                            <port/>
+                            <description/>
+                            <inventory_link>0</inventory_link>
+                            <applications>
+                                <application>
+                                    <name>BGP</name>
+                                </application>
+                            </applications>
+                            <valuemap/>
+                            <logtimefmt/>
+                            <preprocessing/>
+                            <jmx_endpoint/>
+                            <timeout>3s</timeout>
+                            <url/>
+                            <query_fields/>
+                            <posts/>
+                            <status_codes>200</status_codes>
+                            <follow_redirects>1</follow_redirects>
+                            <post_type>0</post_type>
+                            <http_proxy/>
+                            <headers/>
+                            <retrieve_mode>0</retrieve_mode>
+                            <request_method>0</request_method>
+                            <output_format>0</output_format>
+                            <allow_traps>0</allow_traps>
+                            <ssl_cert_file/>
+                            <ssl_key_file/>
+                            <ssl_key_password/>
+                            <verify_peer>0</verify_peer>
+                            <verify_host>0</verify_host>
+                            <application_prototypes/>
+                            <master_item/>
+                        </item_prototype>
+                        <item_prototype>
+                            <name>Neighbor {#SNMPINDEX} prefix limit</name>
+                            <type>4</type>
+                            <snmp_community>{$SNMP_COMMUNITY}</snmp_community>
+                            <snmp_oid>.1.3.6.1.4.1.9.9.187.1.2.8.1.3.2.16.{#SNMPINDEX}.2.1</snmp_oid>
+                            <key>cisco.bgp.critical.ipv6.limit[{#SNMPINDEX}]</key>
+                            <delay>1h</delay>
+                            <history>7d</history>
+                            <trends>0</trends>
                             <status>0</status>
                             <value_type>3</value_type>
                             <allowed_hosts/>
@@ -330,7 +586,7 @@
                             <key>cisco.bgp.critical.ipv6.state[{#SNMPINDEX}]</key>
                             <delay>2m</delay>
                             <history>1d</history>
-                            <trends>1d</trends>
+                            <trends>0</trends>
                             <status>0</status>
                             <value_type>3</value_type>
                             <allowed_hosts/>
@@ -400,6 +656,22 @@
                             <dependencies/>
                             <tags/>
                         </trigger_prototype>
+                        <trigger_prototype>
+                            <expression>{CISCO - BGP:cisco.bgp.critical.ipv6.accepted[{#SNMPINDEX}].last()}&gt;(0.8*{CISCO - BGP:cisco.bgp.critical.ipv6.limit[{#SNMPINDEX}].last()})</expression>
+                            <recovery_mode>0</recovery_mode>
+                            <recovery_expression/>
+                            <name>Critical BGP with AS {#SNMPVALUE} IPv6 reached 80% of prefix limit</name>
+                            <correlation_mode>0</correlation_mode>
+                            <correlation_tag/>
+                            <url/>
+                            <status>0</status>
+                            <priority>4</priority>
+                            <description/>
+                            <type>0</type>
+                            <manual_close>0</manual_close>
+                            <dependencies/>
+                            <tags/>
+                        </trigger_prototype>
                     </trigger_prototypes>
                     <graph_prototypes/>
                     <host_prototypes/>
@@ -452,7 +724,7 @@
                         <conditions>
                             <condition>
                                 <macro>{#SNMPVALUE}</macro>
-                                <value>{$BGP_PEER_AS}</value>
+                                <value>{$BGP_CRITICAL_ASN}</value>
                                 <operator>9</operator>
                                 <formulaid>A</formulaid>
                             </condition>
@@ -651,7 +923,7 @@
                         <conditions>
                             <condition>
                                 <macro>{#SNMPVALUE}</macro>
-                                <value>{$BGP_PEER_AS}</value>
+                                <value>{$BGP_CRITICAL_ASN}</value>
                                 <operator>9</operator>
                                 <formulaid>A</formulaid>
                             </condition>
